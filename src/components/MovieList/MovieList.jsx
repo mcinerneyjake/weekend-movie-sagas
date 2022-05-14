@@ -16,9 +16,7 @@ function MovieList() {
       <h1>MovieList</h1>
       <section className='movies'>
         {movies.map((movie) => {
-          return (
-              <MovieItem key={movie.id} movie={movie} />
-          );
+          return <MovieItem key={movie.id} movie={movie} />;
         })}
       </section>
     </main>

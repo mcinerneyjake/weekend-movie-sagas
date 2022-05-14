@@ -1,13 +1,8 @@
-function MovieItem(prop) {
-
-    const getDescription = () => {
-
-    }
-
+function MovieItem(movie) {
   return (
-    <div key={prop.movie.id}>
-      <h3>{prop.movie.title}</h3>
-      <img src={prop.movie.poster} alt={prop.movie.title} onClick={getDescription} />
+    <div key={movie.movie.id}>
+      <h3>{movie.movie.title}</h3>
+      <img src={movie.movie.poster} alt={movie.movie.title} />
     </div>
   );
 }
