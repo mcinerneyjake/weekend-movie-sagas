@@ -8,11 +8,12 @@ function App() {
     <div className='App'>
       <h1>The Movies Saga!</h1>
       <Router>
+        {/* MovieList Component */}
         <Route exact path='/'>
           <MovieList />
         </Route>
 
-        {/* Details page */}
+        {/* MovieDetails Component */}
         <Route exact path='/details'>
           <MovieDetails />
         </Route>
