@@ -15,9 +15,10 @@ function MovieList() {
     <main>
       <h1>MovieList</h1>
       <section className='movies'>
-        {movies.map((movie) => {
-          return <MovieItem key={movie.id} movie={movie} />;
-        })}
+        {movies &&
+          movies.map((movie) => {
+            return <MovieItem key={movie.id} movie={movie} />;
+          })}
       </section>
     </main>
   );
