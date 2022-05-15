@@ -5,21 +5,26 @@ import MovieItem from '../MovieItem/MovieItem';
 
 function MovieList() {
   const dispatch = useDispatch();
+  // Select all movies from the 'movies' reducer using useSelector.
   const movies = useSelector((store) => store.movies);
 
+  // On load, useEffect dispatches to rootSaga in index.js and GETs all movies from database.
   useEffect(() => {
     dispatch({ type: 'FETCH_MOVIES' });
   }, []);
 
   return (
     <main>
-      <h1>MovieList</h1>
-      <section className='movies'>
-        {movies &&
-          movies.map((movie) => {
-            return <MovieItem key={movie.id} movie={movie} />;
-          })}
-      </section>
+      {/* Map through all movies to render each individual movie stored within the 'movies' reducer. */}
+      <h1>Movie List</h1>
+      <div className='movies-container'>
+        <section className='movies'>
+          {movies &&
+            movies.map((movie) => {
+              return <MovieItem key={movie.id} movie={movie} />;
+            })}
+        </section>
+      </div>
     </main>
   );
 }
