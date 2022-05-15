@@ -17,7 +17,7 @@ function MovieDetails() {
   };
 
   return (
-    <>
+    <div className='movie-details'>
       {/* Map through movies and genres to render each movie and genre stored within the reducers. */}
       {movies &&
         movies.map((movie) => {
@@ -29,12 +29,13 @@ function MovieDetails() {
             </div>
           );
         })}
+      <h3>Genre:</h3>
       {genres &&
         genres.map((genre) => {
           return <p>{genre.name}</p>;
         })}
       <Button onClick={goToMovieList}>Back to Movie List</Button>
-    </>
+    </div>
   );
 }
 

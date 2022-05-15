@@ -47,9 +47,6 @@ function MovieItem({ movie }) {
         <Card.Img variant='bottom' src={movie.poster} />
         <Button onClick={getMovieAndGenres}>Movie Details</Button>
       </Card>
-
-      {/* <h2>{movie.title}</h2>
-      <img src={movie.poster} onClick={getMovieAndGenres} /> */}
     </div>
   );
 }

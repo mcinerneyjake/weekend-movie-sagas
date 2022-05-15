@@ -17,7 +17,7 @@ function MovieForm() {
   };
 
   return (
-    <Card>
+    <Card className='form-card'>
       <Card.Body>
         <Card.Title style={{ color: '#222' }}>Enter a New Movie</Card.Title>
         <Form>
