@@ -1,4 +1,16 @@
+.movies-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .movies {
-    display : flex;
-    flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: auto;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  width: 700px;
+  color: #222;
 }

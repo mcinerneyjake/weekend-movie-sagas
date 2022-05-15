@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import Button from 'react-bootstrap/Button';
+import { Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function MovieDetails() {

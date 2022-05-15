@@ -16,13 +16,15 @@ function MovieList() {
   return (
     <main>
       {/* Map through all movies to render each individual movie stored within the 'movies' reducer. */}
-      <h1>MovieList</h1>
-      <section className='movies'>
-        {movies &&
-          movies.map((movie) => {
-            return <MovieItem key={movie.id} movie={movie} />;
-          })}
-      </section>
+      <h1>Movie List</h1>
+      <div className='movies-container'>
+        <section className='movies'>
+          {movies &&
+            movies.map((movie) => {
+              return <MovieItem key={movie.id} movie={movie} />;
+            })}
+        </section>
+      </div>
     </main>
   );
 }
