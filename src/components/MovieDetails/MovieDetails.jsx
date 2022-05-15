@@ -1,5 +1,7 @@
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import Button from 'react-bootstrap/Button';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function MovieDetails() {
   // Select a single movie and genre from their respective reducers using useSelector.
@@ -31,7 +33,7 @@ function MovieDetails() {
         genres.map((genre) => {
           return <p>{genre.name}</p>;
         })}
-      <button onClick={goToMovieList}>Back to Movie List</button>
+      <Button onClick={goToMovieList}>Back to Movie List</Button>
     </>
   );
 }
