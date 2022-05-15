@@ -2,7 +2,7 @@ import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import './MovieItem.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Card } from 'react-bootstrap';
+import { Button, Card } from 'react-bootstrap';
 
 function MovieItem({ movie }) {
   const dispatch = useDispatch();
@@ -39,11 +39,17 @@ function MovieItem({ movie }) {
   return (
     // Return each movie using the prop in the MovieItem function.
     // The prop is sent via the MovieList component.
-    <div>
-      <Card className='card-image-container' onClick={getMovieAndGenres}>
-        <Card.Title>{movie.title}</Card.Title>
-        <Card.Img src={movie.poster} className='card-image' />
+    <div className='card-container'>
+      <Card style={{ width: '18rem' }}>
+        <Card.Body>
+          <Card.Title style={{ color: '#222' }}>{movie.title}</Card.Title>
+        </Card.Body>
+        <Card.Img variant='bottom' src={movie.poster} />
+        <Button onClick={getMovieAndGenres}>Movie Details</Button>
       </Card>
+
+      {/* <h2>{movie.title}</h2>
+      <img src={movie.poster} onClick={getMovieAndGenres} /> */}
     </div>
   );
 }

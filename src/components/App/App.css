@@ -5,6 +5,8 @@ html {
 
 .App {
   text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .App-header {
@@ -30,13 +32,4 @@ html {
 .breadcrumb {
   height: 100px;
   text-align: center;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
