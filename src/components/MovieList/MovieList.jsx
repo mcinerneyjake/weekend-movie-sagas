@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import MovieItem from '../MovieItem/MovieItem';
+import { Carousel } from 'react-bootstrap';
 
 function MovieList() {
   const dispatch = useDispatch();
@@ -13,15 +14,21 @@ function MovieList() {
   }, []);
 
   return (
-    <main>
+    <main className='movie-list'>
       {/* Map through all movies to render each individual movie stored within the 'movies' reducer. */}
-      <h1>Movie List</h1>
-      <div className='movies-container'>
-        <section className='movies'>
-          {movies &&
-            movies.map((movie) => {
-              return <MovieItem key={movie.id} movie={movie} />;
-            })}
+      <h2>Movie List</h2>
+      <div>
+        <section>
+          <Carousel>
+            {movies &&
+              movies.map((movie) => {
+                return (
+                  <Carousel.Item className='carousel'>
+                    <MovieItem key={movie.id} movie={movie} />
+                  </Carousel.Item>
+                );
+              })}
+          </Carousel>
         </section>
       </div>
     </main>

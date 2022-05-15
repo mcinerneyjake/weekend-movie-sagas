@@ -11,7 +11,7 @@ html {
 
 .App-header {
   background-color: black;
-  height: 150px;
+  height: 200px;
   padding: 20px;
   color: white;
 }
@@ -24,12 +24,35 @@ html {
   font-size: large;
 }
 
-.breadcrumb-container {
+.navbar-container {
   display: flex;
   justify-content: center;
 }
 
-.breadcrumb {
+.navbar {
   height: 100px;
   text-align: center;
+}
+
+.movie-list {
+  margin-top: 50px;
+}
+
+.form-card {
+  margin-top: 50px;
+}
+
+.movie-details {
+  margin-top: 50px;
+}
+
+.carousel {
+  margin-top: 10px;
+  margin-bottom: 50px;
+}
+
+.navbar {
+  background-color: #222;
+  background-color: red;
+  color: white;
 }

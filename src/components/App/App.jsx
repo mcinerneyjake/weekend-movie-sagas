@@ -3,25 +3,29 @@ import './App.css';
 import MovieList from '../MovieList/MovieList';
 import MovieDetails from '../Details/MovieDetails';
 import MovieForm from '../MovieForm/MovieForm';
-import { Breadcrumb } from 'react-bootstrap';
+import { Navbar, Container, Nav, Breadcrumb } from 'react-bootstrap';
 
 function App() {
   return (
     <div className='App-header'>
       <h1 className='header'>Redux-Saga 2: The SQL</h1>
       <Router>
-        <div className='breadcrumb-container'>
-          <Breadcrumb className='breadcrumb'>
-            <Breadcrumb.Item linkAs={Link} linkProps={{ to: '/' }}>
-              Movie List
-            </Breadcrumb.Item>
-            <Breadcrumb.Item linkAs={Link} linkProps={{ to: '/details' }}>
-              Movie Details
-            </Breadcrumb.Item>
-            <Breadcrumb.Item linkAs={Link} linkProps={{ to: '/form' }}>
-              Enter a New Movie
-            </Breadcrumb.Item>
-          </Breadcrumb>
+        <div className='navbar-container'>
+          <Navbar bg='primary' variant='dark'>
+            <Container>
+              <Nav variant='pills' defaultActiveKey='/'>
+                <Nav.Link as={Link} to='/'>
+                  Movie List
+                </Nav.Link>
+                <Nav.Link as={Link} to='/details'>
+                  Movie Details
+                </Nav.Link>
+                <Nav.Link as={Link} to='/form'>
+                  Enter a New Movie
+                </Nav.Link>
+              </Nav>
+            </Container>
+          </Navbar>
         </div>
 
         {/* MovieList Component */}
