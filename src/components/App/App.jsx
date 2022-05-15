@@ -2,22 +2,26 @@ import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import './App.css';
 import MovieList from '../MovieList/MovieList';
 import MovieDetails from '../Details/MovieDetails';
+import MovieForm from '../MovieForm/MovieForm';
 import { Breadcrumb } from 'react-bootstrap';
 
 function App() {
   return (
     <div className='App-header'>
-      <h1 className='header'>The Movies Saga!</h1>
+      <h1 className='header'>Redux-Saga 2: The SQL</h1>
       <Router>
         <div className='breadcrumb-container'>
-        <Breadcrumb className='breadcrumb'>
-          <Breadcrumb.Item linkAs={Link} linkProps={{ to: '/' }}>
-            Movie List
-          </Breadcrumb.Item>
-          <Breadcrumb.Item linkAs={Link} linkProps={{ to: '/details' }}>
-            Movie Details
-          </Breadcrumb.Item>
-        </Breadcrumb>
+          <Breadcrumb className='breadcrumb'>
+            <Breadcrumb.Item linkAs={Link} linkProps={{ to: '/' }}>
+              Movie List
+            </Breadcrumb.Item>
+            <Breadcrumb.Item linkAs={Link} linkProps={{ to: '/details' }}>
+              Movie Details
+            </Breadcrumb.Item>
+            <Breadcrumb.Item linkAs={Link} linkProps={{ to: '/form' }}>
+              Enter a New Movie
+            </Breadcrumb.Item>
+          </Breadcrumb>
         </div>
 
         {/* MovieList Component */}
@@ -31,6 +35,9 @@ function App() {
         </Route>
 
         {/* Add Movie page */}
+        <Route exact path='/form'>
+          <MovieForm />
+        </Route>
       </Router>
     </div>
   );
