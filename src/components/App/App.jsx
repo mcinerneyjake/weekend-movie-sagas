@@ -1,7 +1,7 @@
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import './App.css';
 import MovieList from '../MovieList/MovieList';
-import MovieDetails from '../MovieDetails/MovieDetails';
+import MovieDetails from '../Details/MovieDetails';
 import { Breadcrumb } from 'react-bootstrap';
 
 function App() {
