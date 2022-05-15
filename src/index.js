@@ -16,6 +16,7 @@ function* rootSaga() {
   yield takeEvery('FETCH_MOVIES', fetchAllMovies);
   yield takeEvery('FETCH_MOVIE', fetchSingleMovie);
   yield takeEvery('FETCH_GENRES', fetchGenres);
+  yield takeEvery('CREATE_MOVIE', createMovie);
 }
 
 function* fetchAllMovies() {
@@ -49,6 +50,19 @@ function* fetchGenres(action) {
   } catch {
     console.log('get genres error');
   }
+}
+
+function* createMovie(action) {
+  console.log('createMovie action.payload is', action.payload);
+  const response = yield axios({
+    method: 'POST',
+    url: '/api/movie',
+    data: action.payload,
+  });
+  console.log('createMovie response is:', response);
+  yield put({
+    type: 'FETCH_MOVIES',
+  });
 }
 
 // Create sagaMiddleware
