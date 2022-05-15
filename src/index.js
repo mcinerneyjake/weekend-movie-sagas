@@ -23,10 +23,10 @@ function* fetchAllMovies() {
   // GET all movies from the DB.
   try {
     const movies = yield axios.get('/api/movie/');
-    console.log('get all:', movies.data);
+    console.log('GET all:', movies.data);
     yield put({ type: 'SET_MOVIES', payload: movies.data });
   } catch {
-    console.log('get all movies error');
+    console.log('GET all movies error.');
   }
 }
 
@@ -34,10 +34,10 @@ function* fetchSingleMovie(action) {
   // GET an individual movie from the DB.
   try {
     const movie = yield axios.get(`/api/movie/${action.payload}`);
-    console.log('get one movie:', movie.data);
+    console.log('GET one movie:', movie.data);
     yield put({ type: 'SET_MOVIE', payload: movie.data });
   } catch {
-    console.log('get movie error');
+    console.log('GET movie error.');
   }
 }
 
@@ -45,24 +45,29 @@ function* fetchGenres(action) {
   // GET all genres for an individual movie from the DB.
   try {
     const genres = yield axios.get(`/api/genre/${action.payload}`);
-    console.log('get one genre:', genres.data);
+    console.log('GET one genre:', genres.data);
     yield put({ type: 'SET_GENRES', payload: genres.data });
   } catch {
-    console.log('get genres error');
+    console.log('GET genres error.');
   }
 }
 
 function* createMovie(action) {
-  console.log('createMovie action.payload is', action.payload);
-  const response = yield axios({
-    method: 'POST',
-    url: '/api/movie',
-    data: action.payload,
-  });
-  console.log('createMovie response is:', response);
-  yield put({
-    type: 'FETCH_MOVIES',
-  });
+  // POST new move to DB.
+  try {
+    console.log('createMovie action.payload is', action.payload);
+    const response = yield axios({
+      method: 'POST',
+      url: '/api/movie',
+      data: action.payload,
+    });
+    console.log('createMovie response is:', response);
+    yield put({
+      type: 'FETCH_MOVIES',
+    });
+  } catch {
+    console.log('POST movie error.');
+  }
 }
 
 // Create sagaMiddleware
