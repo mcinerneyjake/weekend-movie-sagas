@@ -1,43 +1,32 @@
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import MovieDetailItem from '../MovieDetailItem/MovieDetailItem';
-import MovieItem from '../MovieItem/MovieItem';
+import { useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 function MovieDetails() {
-  const dispatch = useDispatch();
   const genres = useSelector((store) => store.genres);
-  const movies = useSelector((store) => store.movies);
+  const movies = useSelector((store) => store.movie);
+  const history = useHistory();
 
-  console.log(movies);
-
-  useEffect(() => {
-    getGenres();
-  }, []);
-
-  const getGenres = () => {
-    dispatch({
-      type: 'FETCH_GENRES',
-    });
+  const goToMovieList = () => {
+    history.push('/');
   };
 
   return (
     <>
-      <ul>
-        {movies.map((movie) => {
+      {movies &&
+        movies.map((movie) => {
           return (
-            <li key={movie.id}>
+            <div key={movie.id}>
               <h3>{movie.title}</h3>
-              <ul>
-                {genres.map((genre) => {
-                  return <MovieDetailItem key={genre.id} genre={genre} />;
-                })}
-              </ul>
               <p>{movie.description}</p>
               <img src={movie.poster} alt={movie.title} />
-            </li>
+            </div>
           );
         })}
-      </ul>
+      {genres &&
+        genres.map((genre) => {
+          return <p>{genre.name}</p>;
+        })}
+      <button onClick={goToMovieList}>Back to Movie List</button>
     </>
   );
 }
