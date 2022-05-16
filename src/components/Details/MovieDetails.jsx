@@ -29,7 +29,7 @@ function MovieDetails() {
             </div>
           );
         })}
-      <h3>Genre:</h3>
+      <h3 className='genre'>Genre:</h3>
       {genres &&
         genres.map((genre) => {
           return <p>{genre.name}</p>;

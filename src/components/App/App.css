@@ -51,8 +51,6 @@ html {
   margin-bottom: 50px;
 }
 
-.navbar {
-  background-color: #222;
-  background-color: red;
-  color: white;
+.genre {
+  margin-top: 10px;
 }
