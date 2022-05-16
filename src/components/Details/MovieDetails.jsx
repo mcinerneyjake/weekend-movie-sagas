@@ -32,7 +32,7 @@ function MovieDetails() {
       <h3 className='genre'>Genre:</h3>
       {genres &&
         genres.map((genre) => {
-          return <p>{genre.name}</p>;
+          return <p key={genre.name + genre.id}>{genre.name}</p>;
         })}
       <Button onClick={goToMovieList}>Back to Movie List</Button>
     </div>

@@ -23,8 +23,8 @@ function MovieList() {
             {movies &&
               movies.map((movie) => {
                 return (
-                  <Carousel.Item className='carousel'>
-                    <MovieItem key={movie.id} movie={movie} />
+                  <Carousel.Item key={movie.id} className='carousel'>
+                    <MovieItem movie={movie} />
                   </Carousel.Item>
                 );
               })}
