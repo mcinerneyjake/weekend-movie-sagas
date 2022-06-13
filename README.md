@@ -1,9 +1,5 @@
-# Project Name
-
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+# React Movie Gallery
 
 ## Description
 
-Your project description goes here. What problem did you solve? How did you solve it?
-
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+Oftentimes, movie collections can be cumbersome, clunky, and user-unfriendly. But, with the React Movie Gallery, all of your favorite movies can be viewed easily and accessibly for ease of use! Enjoy your movies the fun way - with React Movie Gallery!
